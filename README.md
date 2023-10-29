@@ -16,5 +16,5 @@ local settings = {
    newFunctionMethod = true,
    blacklistedNames = {}
 }
-loadstring(game:HttpGet("https://raw.githubusercontent.com/magician69420/engospyreborn/main/source.lua?token=GHSAT0AAAAAACHFC2CLPYOXFGODNOQ2YWOWZJ6E22A"))(settings)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/magician69420/engospyreborn/main/source.lua"))(settings)
 ```
