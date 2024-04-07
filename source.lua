@@ -411,7 +411,6 @@ function spy.createUILibrary()
                 if v.Remote == remote then
                     v.updateCall(code)
                     print('lul')
-                    writefile(remote .. '.lua', code)
                     return v
                 end
             end
@@ -633,7 +632,7 @@ if not wasLoaded then spy.Minimize() end
 function spy.onEventFired(event, args, ncm) 
     local codestr = spy.convert_to_code(event, args, ncm)
     tabs[event.ClassName].createCall(event, codestr)
-	writefile(event .. '.lua', code)
+	writefile(event .. '.lua', codestr)
 	print('lel')
 end
 
