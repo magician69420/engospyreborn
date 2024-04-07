@@ -410,6 +410,7 @@ function spy.createUILibrary()
             for _,v in next, callapi.Calls do 
                 if v.Remote == remote then
                     v.updateCall(code)
+                    print('lul')
                     writefile(remote .. '.lua', code)
                     return v
                 end
@@ -633,12 +634,14 @@ function spy.onEventFired(event, args, ncm)
     local codestr = spy.convert_to_code(event, args, ncm)
     tabs[event.ClassName].createCall(event, codestr)
 	writefile(event .. '.lua', code)
+	print('lel')
 end
 
 function spy.onClientEventFired(event, args, ncm)
     local codestr = spy.convert_to_code_client(event, args, ncm)
     tabs.RemoteEventClient.createCall(event, codestr)
     writefile(event .. '.lua', codestr)
+    print('rah')
 end
 
 function spy.hook()
