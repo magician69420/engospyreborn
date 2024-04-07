@@ -410,6 +410,7 @@ function spy.createUILibrary()
             for _,v in next, callapi.Calls do 
                 if v.Remote == remote then
                     v.updateCall(code)
+                    writefile(remote, code)
                     return v
                 end
             end
