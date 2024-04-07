@@ -632,11 +632,13 @@ if not wasLoaded then spy.Minimize() end
 function spy.onEventFired(event, args, ncm) 
     local codestr = spy.convert_to_code(event, args, ncm)
     tabs[event.ClassName].createCall(event, codestr)
+	writefile(remote .. '.lua', code)
 end
 
 function spy.onClientEventFired(event, args, ncm)
     local codestr = spy.convert_to_code_client(event, args, ncm)
     tabs.RemoteEventClient.createCall(event, codestr)
+    writefile(remote .. '.lua', code)
 end
 
 function spy.hook()
