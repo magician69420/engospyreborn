@@ -3,7 +3,7 @@ local spy_settings = ({...})[1] or {}
 local st = tick()
 local service = setmetatable({}, {__index = function(t,k) return game.GetService(game,k) end})
 local decompile = decompile or disassemble or function() return "-- Decompiler not found." end
-local setclipboardfunc = function(message) if setclipboard then setclipboard("\n"..tostring(message)) else print("Couldn't setclipboard.") end end
+local setclipboardfunc = function(message) if setclipboard then setclipboard(""..tostring(message)) else print("Couldn't setclipboard.") end end
 local setident = syn and syn.set_thread_identity or setidentity or setthreadcontext
 local isV3 = syn and syn.toast_notification ~= nil
 local lplr = service.Players.LocalPlayer
